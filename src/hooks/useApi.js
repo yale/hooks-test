@@ -40,7 +40,7 @@ export default (endpoint, opts = {}) => {
       .catch(error => dispatch({ type: "error", payload: error }));
   };
 
-  useEffect(makeCall, [endpoint, opts.refetch]);
+  useEffect(makeCall, [endpoint]);
 
   return [state, makeCall];
 };

@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import useApi from "./hooks/useApi";
 import ReactDOM from "react-dom";
 
-function App({ currentLocation }) {
+function App() {
   const [breweries, refresh] = useApi(
-    "https://api.openbrewerydb.org/breweries",
-    {
-      refetch: currentLocation
-    }
+    "https://api.openbrewerydb.org/breweries"
   );
 
   if (breweries.error) {
